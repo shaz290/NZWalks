@@ -123,13 +123,13 @@ namespace NZWalks.API.Controllers
         {
             //Call Repository to delete walk
 
-           var walkDOmain= await walkRepository.DeleteAsync(id);
-            if(walkDOmain==null) 
-            { 
-            return NotFound();
+            var walkDOmain = await walkRepository.DeleteAsync(id);
+            if (walkDOmain == null)
+            {
+                return NotFound();
             }
 
-           var walkDTO= mapper.Map<Models.DTO.Walk>(walkDOmain);
+            var walkDTO = mapper.Map<Models.DTO.Walk>(walkDOmain);
             return Ok(walkDTO);
         }
     }
